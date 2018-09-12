@@ -3,9 +3,9 @@
 include '../Conexao.php';
 
 class Modelo {
-	
-	private $id_modelo;
+private $id_modelo;
 	private $nome;
+	private $id_marca;	//PFK
 	
 	public function get_id_modelo() {
 		return $id_modelo;
@@ -13,6 +13,10 @@ class Modelo {
 	
 	public function get_nome() {
 		return $nome;
+	}
+	
+	public function get_id_marca() {
+		return $id_marca;
 	}
 	
 	public function set_id_modelo($temp) {
@@ -23,10 +27,14 @@ class Modelo {
 		$nome = $temp;
 	}
 	
+	public function set_id_marca($temp) {
+		$id_marca = $temp;
+	}
+		
 	public function data_retrieve($sql = null) {
 		$conexao = new Conexao();
 		if (!$sql) {
-			$sql = "select * from marca order by id_marca";
+			$sql = "select * from modelo order by id_modelo";
 		}
         return $conexao->recuperarDados($sql);
 	}
