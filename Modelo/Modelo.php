@@ -3,7 +3,8 @@
 include '../Conexao.php';
 
 class Modelo {
-private $id_modelo;
+	
+	private $id_modelo;
 	private $nome;
 	private $id_marca;	//PFK
 	
