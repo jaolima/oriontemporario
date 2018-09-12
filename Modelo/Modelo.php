@@ -35,7 +35,7 @@ class Modelo {
 	public function data_retrieve($sql = null) {
 		$conexao = new Conexao();
 		if (!$sql) {
-			$sql = "select * from modelo order by id_modelo";
+			$sql = "select * from modelo where modelo.id_marca = marca.id_marca";
 		}
         return $conexao->recuperarDados($sql);
 	}
